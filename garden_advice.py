@@ -1,11 +1,17 @@
-# Hardcoded values for the season and plant type
-season = "summer"  # TODO: Replace with input() to allow user interaction.
-plant_type = "flower"  # TODO: Replace with input() to allow user interaction.
+# Garden Advice App
+# Prints gardening advice based on the season and the type of plant.
 
-# Variable to hold gardening advice
+# Hardcoded values for the season and plant type.
+# Change these to get advice for a different season or plant.
+season = "summer"
+plant_type = "flower"
+
+# Empty string that we add advice to as the program runs
 advice = ""
 
-# Determine advice based on the season
+# Season advice:
+# check which season was chosen and add the matching tip.
+# If the season isn't recognised, add a default message.
 if season == "summer":
     advice += "Water your plants regularly and provide some shade.\n"
 elif season == "winter":
@@ -13,7 +19,9 @@ elif season == "winter":
 else:
     advice += "No advice for this season.\n"
 
-# Determine advice based on the plant type
+# Plant type advice:
+# check which plant type was chosen and add the matching tip.
+# If the plant type isn't recognised, add a default message.
 if plant_type == "flower":
     advice += "Use fertiliser to encourage blooms."
 elif plant_type == "vegetable":
@@ -21,26 +29,5 @@ elif plant_type == "vegetable":
 else:
     advice += "No advice for this type of plant."
 
-# Plant recommendations:
-# a dictionary of plants that grow well in each season.
-season_plants = {
-    "summer": ["tomatoes", "sunflowers", "basil"],
-    "winter": ["kale", "garlic", "pansies"],
-    "spring": ["peas", "tulips", "lettuce"],
-    "autumn": ["carrots", "chrysanthemums", "spinach"],
-}
-
-# Look up plants for the chosen season and add them to the advice
-if season in season_plants:
-    advice += "\nPlants that thrive in " + season + ": " + ", ".join(season_plants[season]) + "."
-else:
-    advice += "\nNo plant recommendations for this season."
-
-# Print the generated advice
+# Show all the collected advice to the user
 print(advice)
-
-# TODO: Examples of possible features to add:
-# - Add detailed comments explaining each block of code.
-# - Refactor the code into functions for better readability and modularity.
-# - Store advice in a dictionary for multiple plants and seasons.
-# - Recommend plants based on the entered season.
