@@ -21,6 +21,21 @@ elif plant_type == "vegetable":
 else:
     advice += "No advice for this type of plant."
 
+# Plant recommendations:
+# a dictionary of plants that grow well in each season.
+season_plants = {
+    "summer": ["tomatoes", "sunflowers", "basil"],
+    "winter": ["kale", "garlic", "pansies"],
+    "spring": ["peas", "tulips", "lettuce"],
+    "autumn": ["carrots", "chrysanthemums", "spinach"],
+}
+
+# Look up plants for the chosen season and add them to the advice
+if season in season_plants:
+    advice += "\nPlants that thrive in " + season + ": " + ", ".join(season_plants[season]) + "."
+else:
+    advice += "\nNo plant recommendations for this season."
+
 # Print the generated advice
 print(advice)
 
